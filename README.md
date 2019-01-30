@@ -2,7 +2,9 @@
 
 ## React Week 1 Project
 
-## Project goals:
+This project is intentionally open ended and leaves a lot of the design decisions up to you, the student. Given very little starter code, the goal is to build out an app that has all the deliverables. The 'how' is left up to you. 
+
+## Project deliverables:
 
 * create an index displaying all hog tiles
 * render each hog name and picture in a tile
@@ -35,6 +37,22 @@ When building your filter and sort functionalities, consider what you want to st
 
 Be sure to use good programming practices, such as clear variable names and single responsibility functions. React apps can quickly become tangled and hard to debug if built without best practices!
 
-## Styling
+## IMPORTANT NOTES
 
-We've imported the Semantic library to keep your piggies looking pretty. To keep your hogs in columns, make sure their parent container has the class "ui grid container". The children in the columns should have class "ui eight wide column". (Semantic uses a grid with a default of 16 units wide, so 8-wide will make two columns and 4-wide will make 4 columns.) Semantic will take care of assigning the columns for you. You can also try implementing [Semantic Cards](https://semantic-ui.com/views/card.html) for each hog.
+#### Styling
+We've imported the Semantic library to keep your piggies looking pretty. We suggest showing your hog tiles in two columns. Therefore, make sure the parent div has the class `ui grid container`. The children div should have class `ui eight wide column`. Semantic grid is sixteen units wide, so `ui eight wide column` divs will take up half the width of the page. Optionally, you can also try implementing [Semantic Cards](https://semantic-ui.com/views/card.html) for each hog tile.
+
+#### Importing images
+The image files for all pigs can be accessed using their relative path. Because React uses webpack, we need to first require the file. This step needs to be done in order for your pig images to show up correctly. For example:
+
+```
+<img src={require('path/to/pig-name.jpg')} />
+```
+
+Or alternatively
+
+```
+let pigName = 'pig-name'
+let imageURL = require(`path/to/${pig-name}.jpg`)
+return <img src={imageURL} />
+```
